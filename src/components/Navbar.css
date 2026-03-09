@@ -1,0 +1,212 @@
+/* ============================
+   GLOBAL COLOR VARIABLES
+=============================== */
+:root {
+  --primary: #00bfff;   /* Sky Blue */
+  --secondary: #b70ae7; /* Purple */
+  --text-dark: #222;
+  --white: #ffffff;
+  --bg-dark: #111827;
+}
+
+/* ============================
+   TOP HEADER
+=============================== */
+.top-header {
+  width: 100%;
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.top-header-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE CONTACT DETAILS */
+.top-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-header-left svg {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.top-header-left a {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.top-header-left p {
+  margin: 0;
+}
+
+.top-header-left a:hover p {
+  text-decoration: underline;
+}
+
+/* RIGHT SOCIAL ICONS */
+.top-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-header-right a {
+  color: var(--white);
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.top-header-right a:hover {
+  color: var(--primary);
+}
+
+/* ============================
+   NAVBAR STYLING
+=============================== */
+.navbar {
+  background: var(--white);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 12px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================
+   LOGO
+=============================== */
+.navbar-logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.home-link {
+  text-decoration: none;
+}
+
+.logo-right {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.logo-left {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.home-link:hover .logo-right,
+.home-link:hover .logo-left {
+  opacity: 0.85;
+  transition: 0.2s ease-in-out;
+}
+
+/* ============================
+   NAV LINKS
+=============================== */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 17px;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ACTIVE LINK */
+.navbar-link.active {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* ============================
+   RESPONSIVE MENU (HAMBURGER)
+=============================== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* MOBILE MENU */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    padding: 20px 0;
+    display: none;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 500px) {
+  .navbar-logo {
+    font-size: 22px;
+  }
+
+  .top-header-container {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .top-header-left {
+    flex-direction: column;
+    text-align: center;
+  }
+}
